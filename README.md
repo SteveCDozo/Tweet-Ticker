@@ -14,3 +14,7 @@ I chose to display three different columns:
 	3. The message - This is the main part of the tweet, it wouldn't make sense to not display it.
 
 I scrolled through tweets by deleting the last one using the ':last' selector (jQuery) and using the 'remove()' method on it. I then prepended the next tweet so it would go to the top of the list.
+
+I got the background image from https://www.flickr.com/photos/miyukiutada/452566198
+
+Professor Plotka said I could have until Wednesday to turn this assignment in.

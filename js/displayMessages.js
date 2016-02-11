@@ -48,11 +48,11 @@ $(function() {
 			  		$("#user").prepend("<section class=img-rounded><img class=img-rounded class=img-responsive src=" + pictures[counter] + "><div><h5><b>" + names[counter] + "</b></h5><br><h6>@" + screennames[counter] + "</h6></div></section>");
 			  		$("#message").prepend("<section class=img-rounded><p>" + messages[counter] + "</p></section>");
 			  		counter++;
-			  		// hide them by setting opacity to 0
+			  		// hide them by changing display
 			  		$("#time section:first").css("display","none");
 			  		$("#user section:first").css("display","none");
 			  		$("#message section:first").css("display","none");
-			  		// animate the opacity to 1 to fade them in
+			  		// animate them by using the fadeIn function
 			  		$("#time section:first").fadeIn();
 					$("#user section:first").fadeIn();
 					$("#message section:first").fadeIn();

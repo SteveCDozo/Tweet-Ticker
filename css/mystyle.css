@@ -1,0 +1,33 @@
+body {
+	background-color: LightSkyBlue;
+}
+
+section {
+	height: 70px;
+	background-color: AliceBlue;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 7px;
+}
+
+section img {
+	display: inline;
+	margin-right: 10px;
+}
+
+section div {
+	display:inline-block;
+}
+
+h5, h6 {
+	display: inline;
+}
+
+#time section {
+	text-align: center;
+	padding-top: 20px;
+}
+
+header {
+	text-align: center;
+}

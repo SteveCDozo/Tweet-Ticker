@@ -34,15 +34,29 @@ $(function() {
 
    			// scroll through the tweets every 3 seconds   			
 			window.setInterval(function(){
-				// remove the last tweet
-				$("#time section:last").remove();
-				$("#user section:last").remove();
-				$("#message section:last").remove();
-				// add a new tweet to the top
-		  		$("#time").prepend("<section class=img-rounded><time>" + new Date(times[counter]).toUTCString() + "</time></section>");
-		  		$("#user").prepend("<section class=img-rounded><img class=img-rounded class=img-responsive src=" + pictures[counter] + "><div><h5><b>" + names[counter] + "</b></h5><br><h6>@" + screennames[counter] + "</h6></div></section>");
-		  		$("#message").prepend("<section class=img-rounded><p>" + messages[counter] + "</p></section>");
-		  		counter++;		  		
+				// show the removal animation
+				$("#time section:last").animate({height:'toggle'});
+				$("#user section:last").animate({height:'toggle'});
+				$("#message section:last").animate({height:'toggle'});
+				// wait 1 second for the animations to complete, then remove the last tweet
+				setTimeout(function(){
+					$("#time section:last").remove();
+					$("#user section:last").remove();
+					$("#message section:last").remove();
+					// add a new tweet to the top
+			  		$("#time").prepend("<section class=img-rounded><time>" + new Date(times[counter]).toUTCString() + "</time></section>");
+			  		$("#user").prepend("<section class=img-rounded><img class=img-rounded class=img-responsive src=" + pictures[counter] + "><div><h5><b>" + names[counter] + "</b></h5><br><h6>@" + screennames[counter] + "</h6></div></section>");
+			  		$("#message").prepend("<section class=img-rounded><p>" + messages[counter] + "</p></section>");
+			  		counter++;
+			  		// hide them by setting opacity to 0
+			  		$("#time section:first").css("display","none");
+			  		$("#user section:first").css("display","none");
+			  		$("#message section:first").css("display","none");
+			  		// animate the opacity to 1 to fade them in
+			  		$("#time section:first").fadeIn();
+					$("#user section:first").fadeIn();
+					$("#message section:first").fadeIn();
+				}, 1000);		  		
 			}, 3000);
    		})
    		// called if the file was not found

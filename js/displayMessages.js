@@ -1,5 +1,8 @@
 $(function() {
-	// the tweet messages will be stored in an array
+	// store the times, pictures, names, and messages in arrays
+	var times = [];
+	var pictures = [];
+	var names = [];
 	var messages = [];
 	
 	// get data from the JSON file
@@ -9,6 +12,9 @@ $(function() {
    			console.log( "JSON Success!" );
    			// go through each tweet and push the text onto the messages array
    			$.each(data, function(tweetNumber, tweet) {
+   				times.push(tweet.created_at);
+   				pictures.push(tweet.user.profile_image_url);
+   				names.push(tweet.user.name);
    				messages.push(tweet.text);
    			})
    		})
